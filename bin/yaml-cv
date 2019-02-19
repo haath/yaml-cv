@@ -7,6 +7,7 @@ require "optparse"
 require "ostruct"
 require "yaml"
 require "yaml-cv"
+require "filewatcher"
 
 class Options
 
@@ -14,6 +15,9 @@ class Options
 
         @@options = OpenStruct.new
         @@options.file_name = ""
+        @@options.watch = false
+        @@options.html_file = ""
+        @@options.pdf_file = ""
     end
 
     def self.parser
@@ -21,6 +25,21 @@ class Options
         OptionParser.new do |opts|
 
             opts.banner = "Usage: yaml-cv <path to yml file> [options]"
+
+            opts.on("-w", "--watch", "Watch the input file for changes and automatically regenerate the CV.") do |watch|
+
+                @@options.watch = watch
+            end
+
+            opts.on("--html [HTML_FILE]", "The output path to the generated HTML file.") do |html|
+
+                @@options.html_file = html
+            end
+
+            opts.on("--pdf [PDF_FILE]", "The output path to the generated PDF file.") do |pdf|
+
+                @@options.pdf_file = pdf
+            end
 
             opts.on_tail("-h", "--help", "Print this message and exit.") do
 
@@ -50,9 +69,42 @@ class Options
 
 end
 
+def generate()
+
+    cv = CV.new Options.options.file_name
+    
+    if !Options.options.html_file.to_s.empty?
+
+        cv.write_html Options.options.html_file
+    end
+
+    if !Options.options.pdf_file.to_s.empty?
+
+        cv.write_pdf Options.options.pdf_file
+    end
+
+    if Options.options.html_file.to_s.empty? and Options.options.pdf_file.to_s.empty?
+
+        puts cv.render
+    end
+end
+
 Options.parse(ARGV)
 
-cv = CV.new Options.options.file_name
+generate
 
+if Options.options.watch
 
-puts cv.render
+    watchlist = [
+        Options.options.file_name,
+        File.join(File.dirname(__FILE__), "../lib/**/*")
+    ]
+
+    Filewatcher.new(watchlist, spinner: true).watch do |filename, event|
+        
+        puts "Input file updated."
+
+        generate
+    end
+
+end
