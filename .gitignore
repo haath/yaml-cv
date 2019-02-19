@@ -60,3 +60,4 @@ Gemfile.lock
 
 *.html
 *.pdf
+.vscode/
