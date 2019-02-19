@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+
+$:.unshift File.dirname(__FILE__)
+$:.unshift File.join(File.dirname(__FILE__), "../lib")
+
+require "optparse"
+require "ostruct"
+require "yaml"
+require "yaml-cv"
+
+class Options
+
+    def self.initialize
+
+        @@options = OpenStruct.new
+        @@options.file_name = ""
+    end
+
+    def self.parser
+
+        OptionParser.new do |opts|
+
+            opts.banner = "Ussage yaml-cv <path to yml file> [options]"
+
+            opts.on_tail("-h", "--help", "Print this message and exit.") do
+                puts opts
+                exit
+            end
+
+        end
+
+    end
+
+    def self.parse(args)
+
+        initialize
+
+        parser.parse!(args)
+
+        file_name = ARGV.pop
+
+        if !file_name
+            file_name = "cv.yml"
+        end
+    
+        @@options.file_name = file_name
+    end
+
+    def self.options
+        @@options
+    end
+
+end
+
+Options.parse(ARGV)
+
+cv = CV.new Options.options.file_name
+puts cv.render
