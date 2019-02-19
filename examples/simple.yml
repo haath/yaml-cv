@@ -1,0 +1,14 @@
+
+details:
+  first_name: John
+  last_name: Doe
+
+  title: Public Figure
+
+contact:
+- url: github.com/github
+  icon: github
+- url: example.com
+  icon: website
+- url: johndoe@example.com
+  icon: email
