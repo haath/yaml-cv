@@ -23,6 +23,10 @@ p, li {
     padding: .5in;
 }
 
+.header {
+    margin-bottom: 1em;
+}
+
 .header table {
     width: 100%;
 }
@@ -46,7 +50,7 @@ p, li {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    height: 3.6em;
+    height: 3.4em;
 
     column-count: 3;
     column-gap: .3em;
@@ -54,7 +58,7 @@ p, li {
 }
 
 .contact-wrapper {
-    font-size: .64em;
+    font-size: .62em;
     white-space: nowrap;
     padding: .2em;
 }
@@ -69,5 +73,31 @@ p, li {
     top: .3em;
     height: 1.2em;
     width: 1.2em;
-    color: black;
+    color: #14527a;
+    margin-right: .6em;
+}
+
+.section td {
+    padding: 0 .5em 1em .5em;
+}
+
+.section .title-wrapper {
+    width: 18%;
+    vertical-align: top;
+}
+
+.section .title {
+    font-weight: 600;
+}
+
+.section .content {
+    font-size: .8em;
+}
+
+.subsection .title {
+    color: #696969;
+}
+
+.subsection .period-wrapper {
+    font-size: .7em;
 }

@@ -17,14 +17,24 @@ class CV < Mustache
 	def initialize(file_path)
 		@cv = YAML.load_file(file_path)
 
-        @cv["contact"] = @cv["contact"].map { |c|
-            c["icon"] = icon(c["icon"])
-            c
-        }
+        if  @cv["contact"]
+            @cv["contact"] = @cv["contact"].map { |c|
+                c["icon"] = icon(c["icon"])
+                c
+            }
+        end
     end
     
     def details
         @cv["details"]
+    end
+
+    def profile
+        @cv["profile"]
+    end
+
+    def education
+        @cv["education"]
     end
 	
 	def full_name
@@ -40,6 +50,10 @@ class CV < Mustache
     end
 
     def contact_padding
+        if !contact
+            return 0
+        end
+
         columns = (contact.length / 3.0).ceil
         padding = (3 - columns) * 3
 

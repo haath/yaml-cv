@@ -26,7 +26,7 @@
                             {{/ contact_padding}}
                             {{# contact}}
                                 <li class="contact-wrapper">
-                                    <a {{# url}}href="{{ url }}"{{/ url}}>{{{icon}}}&nbsp;{{ text }}</a>
+                                    <a {{# url}}href="{{ url }}"{{/ url}}>{{{icon}}}{{ text }}</a>
                                 </li>
                             {{/ contact}}
                         </ul>
@@ -38,8 +38,33 @@
         </div>
 
         <table>
-
-
+            <tr class="section">
+                <td class="title-wrapper">
+                    <p class="title cyan">PROFILE</p>
+                </td>
+                <td>
+                    <p class="content">{{ profile }}</p>
+                </td>
+            </tr>
+            <tr class="section">
+                <td class="title-wrapper">
+                    <p class="title cyan">EDUCATION</p>
+                </td>
+                <td>
+                    {{# education}}
+                        <table class="subsection">
+                            <tr>
+                                <td class="period-wrapper">
+                                    <p>Jun 8 - Aug 10</p>
+                                </td>
+                                <td class="content">
+                                    <p class="title">{{school}}</p>
+                                </td>
+                            </tr>
+                        </table>
+                    {{/ education}}
+                </td>
+            </tr>
         </table>
 
     </div>

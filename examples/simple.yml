@@ -5,17 +5,27 @@ details:
 
   title: Public Figure
 
+profile: |
+  Lorem ipsum dolor sit amet, vel ei invidunt vituperatoribus, vide lorem labore eu sit. Diam alia accumsan est id, cu ius ignota deleniti patrioque. 
+  Usu cibo solet homero no. Nisl libris at vim, eam ea errem platonem similique. Duo id nemore saperet inciderint, ne mel errem dolorum noluisse.
+
 contact:
-- text: github.com/github
-  url: https://github.com/github
-  icon: github
-- text: example.com
-  url: https://example.com
-  icon: website
 - text: johndoe@example.com
   url: mailto:johndoe@example.com
   icon: email
-- text: (541) 754-3010
-  icon: phone
-- text: (541) 754-3010
-  icon: phone
+- text: Berlin, Germany
+  icon: location
+- text: linkedin.com/johndoe
+  url: https://linkedin.com/johndoe
+  icon: linkedin
+
+education:
+- school: Institute of Typography
+  degree: B.S
+  field: Placeholder Engineering
+  from:
+  - month: 9
+    year: 2010
+  to:
+  - month: 6
+    year: 2014
