@@ -4,13 +4,70 @@ body {
     background-color: rgb(218, 218, 218);
 }
 
+p, li {
+    font-family: Century Gothic, arial, sans-serif;
+    color: #989898;
+}
+
+.cyan {
+    color: #7dafd0;
+}
+
 .cv-wrapper {
     background-color: white;
-    display: block;
     margin: auto;
 
     width: 210mm;
     box-sizing: border-box;
 
-    padding: 1in;
+    padding: .5in;
+}
+
+.header table {
+    width: 100%;
+}
+
+.header td {
+    padding: 0;
+    margin: 0;
+    vertical-align: bottom;
+}
+
+.header p {
+    margin: 0;
+}
+
+.header .name {
+    font-size: 1.5em;
+    font-weight: 800;
+}
+
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 3.6em;
+
+    column-count: 3;
+    column-gap: .3em;
+    column-fill: auto;
+}
+
+.contact-wrapper {
+    font-size: .64em;
+    white-space: nowrap;
+    padding: .2em;
+}
+
+.contact-wrapper a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-wrapper svg {
+    position: relative;
+    top: .3em;
+    height: 1.2em;
+    width: 1.2em;
+    color: black;
 }

@@ -16,6 +16,11 @@ class CV < Mustache
 
 	def initialize(file_path)
 		@cv = YAML.load_file(file_path)
+
+        @cv["contact"] = @cv["contact"].map { |c|
+            c["icon"] = icon(c["icon"])
+            c
+        }
     end
     
     def details
@@ -34,8 +39,20 @@ class CV < Mustache
         @cv["contact"]
     end
 
+    def contact_padding
+        columns = (contact.length / 3.0).ceil
+        padding = (3 - columns) * 3
+
+        Array.new(padding) { |i| 0 }
+    end
+
     def icon(name)
-        load_asset("icons/#{name.strip!}.svg")
+        load_asset("icons/#{name.strip}.svg")
+    end
+
+    def render
+        template = load_asset("cv.mustache")
+        super(template)
     end
 
     def write_html(file_path)

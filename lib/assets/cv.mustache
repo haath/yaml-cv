@@ -10,7 +10,32 @@
 
     <div class="cv-wrapper">
 
-        <h1>{{ full_name }}</h1>
+        <div class="header">
+            <table>
+                <tr>
+                    <td width="100%">
+                        <p class="name">
+                            <span class="cyan">{{ details.last_name }}</span>
+                            <span>{{ details.first_name }}</span>
+                        </p>
+                    </td>
+                    <td>
+                        <ul class="contact-list">
+                            {{# contact_padding}}
+                                <li class="contact-wrapper">&nbsp;</li>
+                            {{/ contact_padding}}
+                            {{# contact}}
+                                <li class="contact-wrapper">
+                                    <a {{# url}}href="{{ url }}"{{/ url}}>{{{icon}}}&nbsp;{{ text }}</a>
+                                </li>
+                            {{/ contact}}
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <p class="title">{{ details.title }}</p>
+        </div>
 
         <table>
 

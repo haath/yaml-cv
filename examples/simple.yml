@@ -6,9 +6,16 @@ details:
   title: Public Figure
 
 contact:
-- url: github.com/github
+- text: github.com/github
+  url: https://github.com/github
   icon: github
-- url: example.com
+- text: example.com
+  url: https://example.com
   icon: website
-- url: johndoe@example.com
+- text: johndoe@example.com
+  url: mailto:johndoe@example.com
   icon: email
+- text: (541) 754-3010
+  icon: phone
+- text: (541) 754-3010
+  icon: phone
