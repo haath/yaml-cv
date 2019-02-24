@@ -4,10 +4,47 @@ require "tempfile"
 require "uri"
 require "open3"
 
+
 def load_asset(asset_file)
     file_path = File.join(File.dirname(__FILE__), "assets")
     file_path = File.join(file_path, asset_file)
     File.read(file_path)
+end
+
+def format_period(period)
+    month_names = {
+        1 => "Jun",
+        2 => "Feb",
+        3 => "Mar",
+        4 => "Apr",
+        5 => "May",
+        6 => "Jun",
+        7 => "Jul",
+        8 => "Aug",
+        9 => "Sep",
+        10 => "Oct",
+        11 => "Nov",
+        12 => "Dec"
+    }
+    index = period["month"]
+    period["month"] = month_names[ index ]
+    period
+end
+
+def format_subsections(subsections)
+    if !subsections
+        return
+    end
+
+    subsections.map { |e|
+        if e["from"]
+            e["from"] = format_period e["from"]
+        end
+        if e["to"]
+            e["to"] = format_period e["to"]
+        end
+        e
+    }
 end
 
 class CV < Mustache
@@ -33,8 +70,12 @@ class CV < Mustache
         @cv["profile"]
     end
 
+    def experience
+        format_subsections @cv["experience"]
+    end
+
     def education
-        @cv["education"]
+        format_subsections @cv["education"]
     end
 	
 	def full_name

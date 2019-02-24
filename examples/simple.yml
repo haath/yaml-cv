@@ -19,13 +19,35 @@ contact:
   url: https://linkedin.com/johndoe
   icon: linkedin
 
+experience:
+- company: Typographius Inc.
+  position: Assosiate Placeholder
+  location: Berlin, Germany
+
 education:
+- school: Institute of Typography
+  degree: MSc
+  field: Placeholder Engineering
+  location: Cambridge, UK
+  from:
+    month: 9
+    year: 2014
+  to:
+    month: 6
+    year: 2016
+  description:
+  - |
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    Eu non diam phasellus vestibulum lorem. Commodo ullamcorper a lacus vestibulum sed arcu non. Hac habitasse platea dictumst quisque. 
+    Neque egestas congue quisque egestas diam in arcu cursus.
+
 - school: Institute of Typography
   degree: B.S
   field: Placeholder Engineering
+  location: Cambridge, UK
   from:
-  - month: 9
+    month: 9
     year: 2010
   to:
-  - month: 6
+    month: 6
     year: 2014

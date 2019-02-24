@@ -77,12 +77,12 @@ p, li {
     margin-right: .6em;
 }
 
-.section td {
+.section .content-wrapper {
     padding: 0 .5em 1em .5em;
 }
 
 .section .title-wrapper {
-    width: 18%;
+    width: 16%;
     vertical-align: top;
 }
 
@@ -94,10 +94,33 @@ p, li {
     font-size: .8em;
 }
 
-.subsection .title {
-    color: #696969;
+.subsection {
+    width: 100%;
+    margin-bottom: .8em;
 }
 
-.subsection .period-wrapper {
+.subsection .title {
+    color: #696969;
+    font-size: .9em;
+}
+
+.subsection .period-wrapper,
+.subsection .location-wrapper {
     font-size: .7em;
+    text-align: right;
+}
+
+.subsection .description-list {
+    padding-left: 0em;
+    margin: 0;
+    list-style-type: none;
+}
+
+.subsection .subtitle {
+    font-size: .86em;
+    font-weight: 600;
+}
+
+.education .degree {
+    font-weight: 900;
 }

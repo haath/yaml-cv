@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta charset="UTF-8">
     <title> {{ full_name }} - {{ details.title }} </title>
 
     <style>
@@ -19,7 +20,7 @@
                             <span>{{ details.first_name }}</span>
                         </p>
                     </td>
-                    <td>
+                    <td class="content-wrapper">
                         <ul class="contact-list">
                             {{# contact_padding}}
                                 <li class="contact-wrapper">&nbsp;</li>
@@ -42,23 +43,85 @@
                 <td class="title-wrapper">
                     <p class="title cyan">PROFILE</p>
                 </td>
-                <td>
+                <td class="content-wrapper">
                     <p class="content">{{ profile }}</p>
+                </td>
+            </tr>
+            <tr class="section">
+                <td class="title-wrapper">
+                    <p class="title cyan">WORK EXPERIENCE</p>
+                </td>
+                <td class="content-wrapper">
+                    {{# experience}}
+                        <table class="subsection experience">
+                            <tr>
+                                <td>
+                                    <p class="title">
+                                        {{ company }}
+                                    </p>
+                                </td>
+                                <td class="period-wrapper">
+                                    <p>{{ from.month }} <b>{{ from.year }}</b> - {{ to.month }} <b>{{ to.year }}</b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="subtitle">
+                                        {{ position }}
+                                    </p>
+                                </td>
+                                <td class="location-wrapper">
+                                    <p class="cyan">{{ location }}</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <ul class="description-list">
+                                        {{# description}}
+                                            <li class="content">{{& . }}</li>
+                                        {{/ description}}
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    {{/ experience}}
                 </td>
             </tr>
             <tr class="section">
                 <td class="title-wrapper">
                     <p class="title cyan">EDUCATION</p>
                 </td>
-                <td>
+                <td class="content-wrapper">
                     {{# education}}
-                        <table class="subsection">
+                        <table class="subsection education">
                             <tr>
-                                <td class="period-wrapper">
-                                    <p>Jun 8 - Aug 10</p>
+                                <td>
+                                    <p class="title">
+                                        {{# degree}}<span class="degree">{{ degree }}</span> | {{/ degree}}
+                                        {{ field }}
+                                    </p>
                                 </td>
-                                <td class="content">
-                                    <p class="title">{{school}}</p>
+                                <td class="period-wrapper">
+                                    <p>{{ from.month }} <b>{{ from.year }}</b> - {{ to.month }} <b>{{ to.year }}</b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="subtitle">
+                                        {{ school }}
+                                    </p>
+                                </td>
+                                <td class="location-wrapper">
+                                    <p class="cyan">{{ location }}</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <ul class="description-list">
+                                        {{# description}}
+                                            <li class="content">{{& . }}</li>
+                                        {{/ description}}
+                                    </ul>
                                 </td>
                             </tr>
                         </table>

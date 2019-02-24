@@ -104,7 +104,11 @@ if Options.options.watch
         
         puts "Input file updated."
 
-        generate
+        begin
+            generate
+        rescue StandardError => e
+            puts e.message
+        end
     end
 
 end
