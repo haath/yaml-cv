@@ -70,6 +70,14 @@ class CV < Mustache
         @cv["profile"]
     end
 
+    def skills
+        @cv["skills"]
+    end
+
+    def technical
+        @cv["technical"]
+    end
+
     def experience
         format_subsections @cv["experience"]
     end

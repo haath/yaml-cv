@@ -13,6 +13,12 @@ p, li {
     color: #7dafd0;
 }
 
+.no-list {
+    padding-left: 0em;
+    margin: 0;
+    list-style-type: none;
+}
+
 .cv-wrapper {
     background-color: white;
     margin: auto;
@@ -78,7 +84,7 @@ p, li {
 }
 
 .section .content-wrapper {
-    padding: 0 .5em 1em .5em;
+    padding: 0 .5em .75em .5em;
 }
 
 .section .title-wrapper {
@@ -88,6 +94,7 @@ p, li {
 
 .section .title {
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .section .content {
@@ -110,15 +117,23 @@ p, li {
     text-align: right;
 }
 
-.subsection .description-list {
-    padding-left: 0em;
-    margin: 0;
-    list-style-type: none;
-}
-
 .subsection .subtitle {
     font-size: .86em;
     font-weight: 600;
+}
+
+.fields-list {
+    column-fill: balance;
+}
+
+.skill-list .skill-title {
+    color: #696969;
+    font-size: .86em;
+    font-weight: 600;
+}
+
+.fields-list li {
+    margin-bottom: .5em;
 }
 
 .education .degree {

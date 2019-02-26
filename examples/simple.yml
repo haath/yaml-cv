@@ -19,10 +19,27 @@ contact:
   url: https://linkedin.com/johndoe
   icon: linkedin
 
+skills:
+  columns: 2
+  fields:
+  - name: Placeholder Engineering
+    description: Lorem ipsum dolor sit amet, vel ei invidunt vituperatoribus, vide lorem labore eu sit.
+  - name: Placeholder Engineering
+    description: Lorem ipsum dolor sit amet, vel ei invidunt vituperatoribus, vide lorem labore eu sit.
+
+technical:
+  - category: Languages
+    items: C, C++, C#, HTML
+  - category: Frameworks
+    items: Node.js, React.js, Bootstrap
+
 experience:
 - company: Typographius Inc.
   position: Assosiate Placeholder
   location: Berlin, Germany
+  from:
+    month: 6
+    year: 2016
 
 education:
 - school: Institute of Typography
