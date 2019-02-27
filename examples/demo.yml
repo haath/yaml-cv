@@ -1,0 +1,78 @@
+
+details:
+  first_name: CV Generator
+  last_name: Yaml
+
+  title: Generator of beautiful CVs and Resumes from YAML
+
+profile: |
+  This modular generator is used to generate a CV or resume, in HTML or PDF format.
+  The document consist of details parsed from a user-friendly YAML file.
+  This way skills, accomplishments and experienced can be detailed and kept tracked of
+  in a version-controlled manner, without the syntactic challenging of formatting and 
+  styling the actual document.
+
+contact:
+- text: johndoe@example.com
+  url: mailto:johndoe@example.com
+  icon: email
+- text: Berlin, Germany
+  icon: location
+- text: github.com/gmantaos/yaml-cv
+  url: https://github.com/gmantaos/yaml-cv
+  icon: github
+
+skills:
+  columns: 2
+  fields:
+  - name: First Skill
+    description: Skills can be detailed here in a custom number of columns.
+  - name: Second Skill
+    description: Lorem ipsum dolor sit amet, vel ei invidunt vituperatoribus, vide lorem labore eu sit.
+  - name: Third Skill
+    description: Descriptions of the skills are optional.
+  - name: Fourth Skill
+
+technical:
+  - category: Languages
+    items: C, C++, C#, HTML
+  - category: Frameworks
+    items: Node.js, React.js, Bootstrap
+
+experience:
+- company: Typographius Inc.
+  position: Assosiate Placeholder
+  location: Berlin, Germany
+  from:
+    month: 6
+    year: 2016
+  description:
+  - |
+    Subsections in experience and education can optionally have extended descriptions.
+
+education:
+- school: Institute of Typography
+  degree: MSc
+  field: Placeholder Engineering
+  location: Cambridge, UK
+  from:
+    month: 9
+    year: 2014
+  to:
+    month: 6
+    year: 2016
+  description:
+  - These descriptions are split into YAML lists.
+  - "&bull; HTML is supported so you can add bullets."
+  - ▸ Or other UTF8 characters.
+
+- school: Institute of Typography
+  degree: B.S
+  field: Placeholder Engineering
+  location: Cambridge, UK
+  from:
+    month: 9
+    year: 2010
+  to:
+    month: 6
+    year: 2014

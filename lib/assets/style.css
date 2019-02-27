@@ -58,7 +58,7 @@ p, li {
     margin: 0;
     height: 3.4em;
 
-    column-count: 3;
+    column-count: 2;
     column-gap: .3em;
     column-fill: auto;
 }
@@ -124,6 +124,12 @@ p, li {
 
 .fields-list {
     column-fill: balance;
+}
+.fields-list li {
+    break-inside: avoid-column;
+    display: inline-block;
+    page-break-inside: avoid;
+
 }
 
 .skill-list .skill-title {

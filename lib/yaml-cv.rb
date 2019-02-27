@@ -104,7 +104,7 @@ class CV < Mustache
         end
 
         columns = (contact.length / 3.0).ceil
-        padding = (3 - columns) * 3
+        padding = (2 - columns) * 3
 
         Array.new(padding) { |i| 0 }
     end
