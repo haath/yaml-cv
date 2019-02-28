@@ -103,6 +103,9 @@ p, li {
 
 .subsection {
     width: 100%;
+}
+
+.subsection:not(:last-child) {
     margin-bottom: .8em;
 }
 
@@ -129,13 +132,16 @@ p, li {
     break-inside: avoid-column;
     display: inline-block;
     page-break-inside: avoid;
-
 }
 
 .skill-list .skill-title {
     color: #696969;
     font-size: .86em;
     font-weight: 600;
+}
+
+.skills-section {
+    padding-bottom: .25em !important;
 }
 
 .fields-list li {

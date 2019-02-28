@@ -47,8 +47,8 @@ experience:
     month: 6
     year: 2016
   description:
-  - |
-    Subsections in experience and education can optionally have extended descriptions.
+  - Subsections in experience and education can optionally have extended descriptions.
+  - An empty "to" date defaults to "Present".
 
 education:
 - school: Institute of Typography

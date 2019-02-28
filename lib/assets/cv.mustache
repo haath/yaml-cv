@@ -53,7 +53,7 @@ ____________ ___________ _____ _      _____
                     <p class="title cyan">Profile</p>
                 </td>
                 <td class="content-wrapper">
-                    <p class="content">{{ profile }}</p>
+                    <p class="content">{{{ profile }}}</p>
                 </td>
             </tr>
 
@@ -69,14 +69,14 @@ ____________ ___________ _____ _      _____
                 <td class="title-wrapper">
                     <p class="title cyan">Skills</p>
                 </td>
-                <td class="content-wrapper">
+                <td class="content-wrapper skills-section">
                     <div class="fields-wrapper">
                         <ul class="fields-list skill-list no-list" style="columns: {{ skills.columns }};">
                             {{# skills.fields}}
                                 <li>
                                     <span class="skill-title">{{ name }}</span>
                                     <br>
-                                    <span class="content">{{ description }}</span>
+                                    <span class="content">{{{ description }}}</span>
                                 </li>
                             {{/ skills.fields}}
                         </ul>
@@ -101,7 +101,7 @@ ____________ ___________ _____ _      _____
                         {{# technical}}
                             <li>
                                 <span class="skill-title">{{ category }}:</span>
-                                <span class="content">{{ items }}</span>
+                                <span class="content">{{{ items }}}</span>
                             </li>
                         {{/ technical}}
                     </ul>
