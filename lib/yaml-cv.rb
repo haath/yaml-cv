@@ -64,6 +64,10 @@ class CV < Mustache
     end
 
     def sections
+        if !@cv["sections"]
+            return
+        end
+
         @cv["sections"].map { |s|
             s["items"] = format_subsections s["items"]
             s
