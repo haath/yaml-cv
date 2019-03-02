@@ -1,4 +1,8 @@
-# yaml-cv
+yaml-cv
+[![ ](https://api.travis-ci.com/gmantaos/yaml-cv.svg?branch=master) ](https://travis-ci.com/gmantaos/yaml-cv)
+[![Gem](https://img.shields.io/gem/dt/yaml-cv.svg)](https://rubygems.org/gems/yaml-cv)
+[![ ](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+=====================
 
 Static CV generator from a YAML file, in HTML or PDF format.
 
