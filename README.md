@@ -16,7 +16,7 @@ Static CV generator from a YAML file, in HTML or PDF format.
 $ gem install yaml-cv
 ```
 
-**Disclaimer: ** On versions `0.1` PDF generation will be a little rough, since I implemented the release system before getting around to that.
+**Disclaimer:** On versions `0.1` PDF generation will be a little rough, since I implemented the release system before getting around to that.
 
 ## Usage
 
