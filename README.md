@@ -1,5 +1,6 @@
 yaml-cv
 [![ ](https://api.travis-ci.com/gmantaos/yaml-cv.svg?branch=master) ](https://travis-ci.com/gmantaos/yaml-cv)
+[![ ](https://img.shields.io/gem/v/yaml-cv.svg)](https://rubygems.org/gems/yaml-cv)
 [![ ](https://img.shields.io/gem/dt/yaml-cv.svg)](https://rubygems.org/gems/yaml-cv)
 [![ ](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 =====================
