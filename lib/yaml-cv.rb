@@ -3,7 +3,7 @@ require "yaml"
 require "tempfile"
 require "uri"
 require "open3"
-
+require "base64"
 
 def load_asset(asset_file)
     file_path = File.join(File.dirname(__FILE__), "assets")
@@ -31,27 +31,12 @@ def format_period(period)
     period
 end
 
-def format_subsections(subsections)
-    if !subsections
-        return
-    end
-
-    subsections.map { |e|
-        if e["from"]
-            e["from"] = format_period e["from"]
-        end
-        if e["to"]
-            e["to"] = format_period e["to"]
-        end
-        e
-    }
-end
-
 class CV < Mustache
 
 	self.template_file = File.join(File.dirname(__FILE__), "assets/cv.mustache")
 
 	def initialize(file_path)
+        @file_path = file_path
 		@cv = YAML.load_file(file_path)
 
         if  @cv["contact"]
@@ -78,12 +63,11 @@ class CV < Mustache
         @cv["technical"]
     end
 
-    def experience
-        format_subsections @cv["experience"]
-    end
-
-    def education
-        format_subsections @cv["education"]
+    def sections
+        @cv["sections"].map { |s|
+            s["items"] = format_subsections s["items"]
+            s
+        }
     end
 	
 	def full_name
@@ -113,13 +97,40 @@ class CV < Mustache
         load_asset("icons/#{name.strip}.svg")
     end
 
+    def format_subsections(subsections)
+        if !subsections
+            return
+        end
+    
+        subsections.map { |e|
+            if e["from"]
+                e["from"] = format_period e["from"]
+            end
+            if e["to"]
+                e["to"] = format_period e["to"]
+            end
+    
+            if e["logo"]
+                e["logo"] = read_image e["logo"]
+            end
+    
+            e
+        }
+    end
+
+    def read_image(img_path)
+        file_path = File.join(File.dirname(@file_path), img_path)
+        file = File.open(file_path, "rb")
+        data = file.read
+        Base64.strict_encode64(data)
+    end
+
     def render
         template = load_asset("cv.mustache")
         super(template)
     end
 
     def write_html(file_path)
-
         html = render
         File.open(file_path, 'w') { |file| file.write(html) }
     end

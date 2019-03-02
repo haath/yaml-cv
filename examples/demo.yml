@@ -39,40 +39,50 @@ technical:
   - category: Frameworks
     items: Node.js, React.js, Bootstrap
 
-experience:
-- company: Typographius Inc.
-  position: Assosiate Placeholder
-  location: Berlin, Germany
-  from:
-    month: 6
-    year: 2016
-  description:
-  - Subsections in experience and education can optionally have extended descriptions.
-  - An empty "to" date defaults to "Present".
+sections:
+- name: Work Experience
+  items:
 
-education:
-- school: Institute of Typography
-  degree: MSc
-  field: Placeholder Engineering
-  location: Cambridge, UK
-  from:
-    month: 9
-    year: 2014
-  to:
-    month: 6
-    year: 2016
-  description:
-  - These descriptions are split into YAML lists.
-  - "&bull; HTML is supported so you can add bullets."
-  - ▸ Or other UTF8 characters.
+  - title: Typographius Inc.
+    subtitle: Assosiate Placeholder
+    location: Berlin, Germany
+    from:
+      month: 6
+      year: 2018
+    description:
+    - Subsections in experience and education can optionally have extended descriptions.
+    - An empty "to" date defaults to "Present".
 
-- school: Institute of Typography
-  degree: B.S
-  field: Placeholder Engineering
-  location: Cambridge, UK
-  from:
-    month: 9
-    year: 2010
-  to:
-    month: 6
-    year: 2014
+  - logo: img/company-logo.png
+    from:
+      month: 6
+      year: 2016
+    to:
+      month: 6
+      year: 2018
+    description:
+    - Logo images can also be used in the place of titles.
+    - Image paths are specified relative to the yaml file.
+    - They are read and embedded into the HTML in Base64 format, so the generated file can be viewed by itself without carrying around static assets.
+
+- name: Education
+  items:
+  - title: Institute of Typography
+    subtitle: Placeholder Engineering
+    location: Cambridge, UK
+    from:
+      month: 9
+      year: 2014
+    to:
+      month: 6
+      year: 2016
+    description:
+    - These descriptions are split into YAML lists.
+    - "&bull; HTML is supported so you can add bullets."
+    - ▸ Or other UTF8 characters.
+
+  - title: Institute of Typography
+    logo: img/bulb.png
+    subtitle: Placeholder Engineering
+    location: Cambridge, UK
+    description: Logos can also be used in combination with a title.

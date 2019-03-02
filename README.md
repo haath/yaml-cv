@@ -2,6 +2,10 @@
 
 Static CV generator from a YAML file, in HTML or PDF format.
 
+<h1 align="center">
+  <img src="examples/demo.png">
+</h1>
+
 ## Installation
 
 ```shell

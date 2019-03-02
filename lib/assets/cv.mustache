@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> {{ full_name }} - {{ details.title }} </title>
+    <title> {{ full_name }} - {{{ details.title }}} </title>
 
     <style>
         {{ css }}
@@ -27,7 +27,7 @@
                             {{/ contact_padding}}
                             {{# contact}}
                                 <li class="contact-wrapper">
-                                    <a {{# url}}href="{{ url }}"{{/ url}}>{{{icon}}}{{ text }}</a>
+                                    <a {{# url}}href="{{ url }}"{{/ url}} target="_blank">{{{icon}}}{{ text }}</a>
                                 </li>
                             {{/ contact}}
                         </ul>
@@ -35,7 +35,7 @@
                 </tr>
             </table>
             <hr>
-            <p class="title">{{ details.title }}</p>
+            <p class="title">{{{ details.title }}}</p>
         </div>
 
         <table>
@@ -109,24 +109,28 @@ ____________ ___________ _____ _      _____
             </tr>
 
 <!--
-_______   ________ ___________ _____ _____ _   _ _____  _____ 
-|  ___\ \ / /| ___ \  ___| ___ \_   _|  ___| \ | /  __ \|  ___|
-| |__  \ V / | |_/ / |__ | |_/ / | | | |__ |  \| | /  \/| |__  
-|  __| /   \ |  __/|  __||    /  | | |  __|| . ` | |    |  __| 
-| |___/ /^\ \| |   | |___| |\ \ _| |_| |___| |\  | \__/\| |___ 
-\____/\/   \/\_|   \____/\_| \_|\___/\____/\_| \_/\____/\____/                                        
+ _____ _____ _____ _____ _____ _____ _   _  _____ 
+/  ___|  ___/  __ \_   _|_   _|  _  | \ | |/  ___|
+\ `--.| |__ | /  \/ | |   | | | | | |  \| |\ `--. 
+ `--. \  __|| |     | |   | | | | | | . ` | `--. \
+/\__/ / |___| \__/\ | |  _| |_\ \_/ / |\  |/\__/ /
+\____/\____/ \____/ \_/  \___/ \___/\_| \_/\____/                                       
 -->
+            {{# sections}}
             <tr class="section">
                 <td class="title-wrapper">
-                    <p class="title cyan">Work Experience</p>
+                    <p class="title cyan">{{ name }}</p>
                 </td>
                 <td class="content-wrapper">
-                    {{# experience}}
-                        <table class="subsection experience">
+                    {{# items}}
+                        <table class="subsection">
                             <tr>
                                 <td>
                                     <p class="title">
-                                        {{ company }}
+                                        {{# logo}}
+                                        <img class="logo" src="data:image/png;base64,{{ logo }}">
+                                        {{/ logo}}
+                                        {{ title }}
                                     </p>
                                 </td>
                                 <td class="period-wrapper">
@@ -140,7 +144,7 @@ _______   ________ ___________ _____ _____ _   _ _____  _____
                             <tr>
                                 <td>
                                     <p class="subtitle">
-                                        {{ position }}
+                                        {{ subtitle }}
                                     </p>
                                 </td>
                                 <td class="location-wrapper">
@@ -157,62 +161,9 @@ _______   ________ ___________ _____ _____ _   _ _____  _____
                                 </td>
                             </tr>
                         </table>
-                    {{/ experience}}
+                    {{/ items}}
                 </td>
             </tr>
-
-<!--
-___________ _   _ _____   ___ _____ _____ _____ _   _ 
-|  ___|  _  \ | | /  __ \ / _ \_   _|_   _|  _  | \ | |
-| |__ | | | | | | | /  \// /_\ \| |   | | | | | |  \| |
-|  __|| | | | | | | |    |  _  || |   | | | | | | . ` |
-| |___| |/ /| |_| | \__/\| | | || |  _| |_\ \_/ / |\  |
-\____/|___/  \___/ \____/\_| |_/\_/  \___/ \___/\_| \_/
--->
-            <tr class="section">
-                <td class="title-wrapper">
-                    <p class="title cyan">Education</p>
-                </td>
-                <td class="content-wrapper">
-                    {{# education}}
-                        <table class="subsection education">
-                            <tr>
-                                <td>
-                                    <p class="title">
-                                        {{# degree}}<span class="degree">{{ degree }}</span> | {{/ degree}}
-                                        {{ field }}
-                                    </p>
-                                </td>
-                                <td class="period-wrapper">
-                                    <p>{{ from.month }} <b>{{ from.year }}</b> - {{ to.month }} <b>{{ to.year }}</b></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p class="subtitle">
-                                        {{ school }}
-                                    </p>
-                                </td>
-                                <td class="location-wrapper">
-                                    <p class="cyan">{{ location }}</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <ul class="no-list">
-                                        {{# description}}
-                                            <li class="content">{{& . }}</li>
-                                        {{/ description}}
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                    {{/ education}}
-                </td>
-            </tr>
-        </table>
-
-    </div>
-
+            {{/ sections}}
 </body>
 </html>
