@@ -24,7 +24,7 @@ class Options
 
         OptionParser.new do |opts|
 
-            opts.banner = "Usage: yaml-cv <path to yml file> [options]"
+            opts.banner = "Usage: yaml-cv <yml file> [options]"
 
             opts.on("-w", "--watch", "Watch the input file for changes and automatically regenerate the CV.") do |watch|
 
@@ -44,7 +44,7 @@ class Options
             opts.on_tail("-h", "--help", "Print this message and exit.") do
 
                 puts opts
-                exit
+                exit 1
             end
 
         end
@@ -59,7 +59,10 @@ class Options
 
         @@options.file_name = ARGV.pop
 
-        raise "Please specify an input yml file." unless @@options.file_name
+        if !@@options.file_name
+            puts self.parser
+            exit 1
+        end
     end
 
     def self.options
