@@ -21,6 +21,31 @@ $ gem install yaml-cv
 
 ## Usage
 
+The CV can be drawn-out in a yaml file, similar to the one shown below.
+
+```yml
+details:
+  first_name: John
+  last_name: Doe
+
+  title: Placeholder Engineer
+
+profile: Personal description.
+
+contact:
+- text: johndoe@example.com
+  url: mailto:johndoe@example.com
+  icon: email
+
+technical:
+  - category: Languages
+    items: C, C++, C#, HTML
+  - category: Frameworks
+    items: Node.js, React.js, Bootstrap
+```
+
+For more, there is the [examples folder](examples).
+
 By default, the output will be printed to stdout in HTML format.
 
 ```shell

@@ -48,6 +48,7 @@ ____________ ___________ _____ _      _____
 | |   | |\ \\ \_/ / |    _| |_| |____| |___ 
 \_|   \_| \_|\___/\_|    \___/\_____/\____/
 -->
+            {{# has_profile}}
             <tr class="section">
                 <td class="title-wrapper">
                     <p class="title cyan">Profile</p>
@@ -56,6 +57,7 @@ ____________ ___________ _____ _      _____
                     <p class="content">{{{ profile }}}</p>
                 </td>
             </tr>
+            {{/ has_profile}}
 
 <!--
  _____ _   _______ _      _      _____ 
@@ -65,6 +67,7 @@ ____________ ___________ _____ _      _____
 /\__/ / |\  \_| |_| |____| |____/\__/ /
 \____/\_| \_/\___/\_____/\_____/\____/
 -->
+            {{# has_skills}}
             <tr class="section">
                 <td class="title-wrapper">
                     <p class="title cyan">Skills</p>
@@ -83,6 +86,7 @@ ____________ ___________ _____ _      _____
                     </div>
                 </td>
             </tr>
+            {{/ has_skills}}
 
 <!--
  _____ _____ _____  _   _  _   _ _____ _____   ___   _     
@@ -92,21 +96,23 @@ ____________ ___________ _____ _      _____
   | | | |___| \__/\| | | || |\  |_| |_| \__/\| | | || |____
   \_/ \____/ \____/\_| |_/\_| \_/\___/ \____/\_| |_/\_____/
 -->
+            {{# has_technical}}
             <tr class="section">
                 <td class="title-wrapper">
                     <p class="title cyan">Technical</p>
                 </td>
                 <td class="content-wrapper">
-                    <ul class="skill-list no-list">
+                    <table class="technical-list">
                         {{# technical}}
-                            <li>
-                                <span class="skill-title">{{ category }}:</span>
-                                <span class="content">{{{ items }}}</span>
-                            </li>
+                            <tr>
+                                <td class="skill-title">{{ category }}:</td>
+                                <td class="content"><p>{{{ items }}}</p></td>
+                            </tr>
                         {{/ technical}}
-                    </ul>
+                    </table>
                 </td>
             </tr>
+            {{/ has_technical}}
 
 <!--
  _____ _____ _____ _____ _____ _____ _   _  _____ 
@@ -167,5 +173,7 @@ ____________ ___________ _____ _      _____
                 </td>
             </tr>
             {{/ sections}}
+        </table>
+    </div>
 </body>
 </html>

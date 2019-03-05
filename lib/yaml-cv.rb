@@ -55,12 +55,24 @@ class CV < Mustache
         @cv["profile"]
     end
 
+    def has_profile
+        @cv.key?("profile")
+    end
+
     def skills
         @cv["skills"]
     end
 
+    def has_skills
+        @cv.key?("skills")
+    end
+
     def technical
         @cv["technical"]
+    end
+
+    def has_technical
+        @cv.key?("technical")
     end
 
     def sections

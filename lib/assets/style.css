@@ -135,17 +135,21 @@ p, li {
     page-break-inside: avoid;
 }
 
-.skill-list .skill-title {
+.skill-title {
     color: #696969;
     font-size: .86em;
     font-weight: 600;
+    vertical-align: top;
 }
-
 .skills-section {
     padding-bottom: .25em !important;
 }
 
 .fields-list li {
+    margin-bottom: .5em;
+}
+
+.technical-list td:not(:last-child) {
     margin-bottom: .5em;
 }
 
