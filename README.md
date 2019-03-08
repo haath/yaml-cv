@@ -7,6 +7,8 @@ yaml-cv
 
 Static CV generator from a YAML file, in HTML or PDF format.
 
+[Demo](https://gmantaos.github.io/yaml-cv/)
+
 <h1 align="center">
   <img src="examples/demo.png">
 </h1>

@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
     s.authors     = ["Greg Mantaos"]
     s.email       = "gmantaos@gmail.com"
 
-    s.homepage    = "https://github.com/gmantaos/yaml-cv"
+    s.homepage    = "https://gmantaos.github.io/yaml-cv/"
     s.metadata    = { "source_code_uri" => "https://github.com/gmantaos/yaml-cv" }
     s.licenses    = ["MIT"]
 
