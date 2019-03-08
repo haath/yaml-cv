@@ -5,13 +5,27 @@ install:
 - bundle install
 
 script:
-- ruby bin/yaml-cv examples/demo.yml --html cv.html
+- mkdir build
+- ruby bin/yaml-cv examples/demo.yml --html build/cv.html
+- ruby bin/yaml-cv examples/demo.yml --pdf build/cv.pdf
+
+before_deploy:
+- mv build/cv.html build/index.html
 
 deploy:
-  provider: rubygems
-  api_key:
-    secure: KMtIB1m3gvKx6gBd6HPg38E/wPugWSoNpItpGZ9GILrSSi3k1p3VvrWkxCYsw91NySpNmZwuVbl41gj+RPMEMr6KF8oEqlUfukk6fxnHtlh0Kt3kGx8WXMpHc418Htm2Tsvenbt7qXesBDd2mZ2yfr6kdvMSKrhGV/FPujGi6zYKUcdnUqrQ/Euwh0I2aB6ttEhUEkRx50Ote6vqg0hkG5ZyGmwV9+pZKhqM2Wb1AZDvZSqZTnWg/PvWLplCGKYnIbHdraUrVRXWubRdroD/7LJteyuMckdznqEdnKiG7DcclkrGKVJvlywILcT854QmiuMfou4EoGx4OBCHDKY6UtPK4h7gpw8z8fLMZ6QyMU8uWgThfx8XcSRIxzmP2/ynOF+UcsnTGXZWMVpBAJLGWYuVhB6Mbsv9JlUTn/qj2JsoJEMJlQP1XpuhyWMVjRV2LBX0bM+s+vfXjp86/EmdrnqHId6n07wvAqhYQkn8LlRI1tuQPUq3A7mEOij6X59yNctPJ9Fojhzn1+JzzvKMLnL87u+oxnMlebdb7YGhgVgpeAceKQPkI40O40+6IftLC7ux/gZTQrsnl+t5I8ZzTXd3C+h96ZQiRnH23sZFeNPMaKUYusquJ5whviSnyA92xpGvapGcyf9P5ABfvlsA5z4Fb5YzQiQbiRi/Lzus5nw=
-  gem: yaml-cv
-  on:
-    tags: true
-    repo: gmantaos/yaml-cv
+  # Publish to RubyGems.org on tags.
+  - provider: rubygems
+    api_key:
+      secure: KMtIB1m3gvKx6gBd6HPg38E/wPugWSoNpItpGZ9GILrSSi3k1p3VvrWkxCYsw91NySpNmZwuVbl41gj+RPMEMr6KF8oEqlUfukk6fxnHtlh0Kt3kGx8WXMpHc418Htm2Tsvenbt7qXesBDd2mZ2yfr6kdvMSKrhGV/FPujGi6zYKUcdnUqrQ/Euwh0I2aB6ttEhUEkRx50Ote6vqg0hkG5ZyGmwV9+pZKhqM2Wb1AZDvZSqZTnWg/PvWLplCGKYnIbHdraUrVRXWubRdroD/7LJteyuMckdznqEdnKiG7DcclkrGKVJvlywILcT854QmiuMfou4EoGx4OBCHDKY6UtPK4h7gpw8z8fLMZ6QyMU8uWgThfx8XcSRIxzmP2/ynOF+UcsnTGXZWMVpBAJLGWYuVhB6Mbsv9JlUTn/qj2JsoJEMJlQP1XpuhyWMVjRV2LBX0bM+s+vfXjp86/EmdrnqHId6n07wvAqhYQkn8LlRI1tuQPUq3A7mEOij6X59yNctPJ9Fojhzn1+JzzvKMLnL87u+oxnMlebdb7YGhgVgpeAceKQPkI40O40+6IftLC7ux/gZTQrsnl+t5I8ZzTXd3C+h96ZQiRnH23sZFeNPMaKUYusquJ5whviSnyA92xpGvapGcyf9P5ABfvlsA5z4Fb5YzQiQbiRi/Lzus5nw=
+    gem: yaml-cv
+    on:
+      tags: true
+      repo: gmantaos/yaml-cv
+  
+  # Publish demo to GitHub pages on pushes to master.
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    on:
+      branch: master
+    local-dir: build/

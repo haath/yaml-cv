@@ -83,6 +83,7 @@ def generate()
 
     if !Options.options.pdf_file.to_s.empty?
 
+        cv.enable_pdf
         cv.write_pdf Options.options.pdf_file
     end
 

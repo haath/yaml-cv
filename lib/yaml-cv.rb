@@ -33,7 +33,9 @@ end
 
 class CV < Mustache
 
-	self.template_file = File.join(File.dirname(__FILE__), "assets/cv.mustache")
+    self.template_file = File.join(File.dirname(__FILE__), "assets/cv.mustache")
+    
+    attr_accessor :is_pdf
 
 	def initialize(file_path)
         @file_path = file_path
@@ -92,6 +94,14 @@ class CV < Mustache
     
     def css
         load_asset("style.css")
+    end
+    
+    def pdf_css
+        load_asset("pdf.css")
+    end
+
+    def enable_pdf(enable = true)
+        @is_pdf = true
     end
 
     def contact
@@ -158,5 +168,7 @@ class CV < Mustache
         temp_file.flush
 
         system("wkhtmltopdf #{temp_file.path} #{file_path}")
+
+        temp_file.close
     end
 end

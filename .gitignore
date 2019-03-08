@@ -58,6 +58,7 @@ Gemfile.lock
 
 # End of https://www.gitignore.io/api/ruby
 
+build/
 *.html
 *.pdf
 .vscode/
