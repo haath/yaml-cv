@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# This script, acting as a post-push Docker hook, will take a newly built
+# and pushed image, which is versioned in the "1.2.3" format and also tag
+# it with "1.2", "1" and "latest".
+# 1. Place this script in: hooks/post_push (relevant to build context)
+# 2. Add only the following build rule:
+#	Type				Source				    Tag
+#	Tag		/^v([0-9]+)\.([0-9]+)\.([0-9]+)$/		{\1}.{\2}.{\3}
+# 3. Push a git tag in the following format to trigger a build: v1.2.3
+
+set -e
+
+# Parse image name for repo name
+# $IMAGE_NAME = username/repo:1.2.3
+tagStart=$(expr index "$IMAGE_NAME" :)
+repoName=${IMAGE_NAME:0:tagStart-1}	# -> username/repo
+tagName=${IMAGE_NAME:tagStart}		# -> 1.2.3
+
+# Replace periods with spaces
+version=${tagName//./ } 			# -> 1 2 3
+
+# Extract version parts
+major=$(echo $version | awk '{print $1}')	# 1
+minor=$(echo $version | awk '{print $2}')	# 2
+patch=$(echo $version | awk '{print $3}')	# 3
+
+# Tag and push username/repo:1.2
+docker tag $IMAGE_NAME ${repoName}:${major}.${minor}
+docker push ${repoName}:${major}.${minor}
+
+# Tag and push username/repo:1
+docker tag $IMAGE_NAME ${repoName}:${major}
+docker push ${repoName}:${major}
+
+# Tag and push username/repo:latest
+docker tag $IMAGE_NAME ${repoName}:latest
+docker push ${repoName}:latest
