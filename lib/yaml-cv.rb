@@ -4,6 +4,7 @@ require "tempfile"
 require "uri"
 require "open3"
 require "base64"
+require "rbconfig"
 
 def load_asset(asset_file)
     file_path = File.join(File.dirname(__FILE__), "assets")
@@ -163,12 +164,28 @@ class CV < Mustache
 
     def write_pdf(file_path)
 
-        temp_file = Tempfile.new(["cv", ".html"])
-        temp_file << render
-        temp_file.flush
+        if is_windows
+            temp_file_name = file_path + ".html"
 
-        system("wkhtmltopdf #{temp_file.path} #{file_path}")
+            temp_file = File.open(temp_file_name, "w")
+            temp_file << render
+            temp_file.flush
+            temp_file.close
 
-        temp_file.close
+            system("wkhtmltopdf.exe #{temp_file.path} #{file_path}")
+
+            File.delete(temp_file_name)
+        else
+            temp_file = Tempfile.new(["cv", ".html"])
+            temp_file << render
+            temp_file.flush
+
+            system("wkhtmltopdf #{temp_file.path} #{file_path}")
+        end
+      
+    end
+
+    def is_windows
+        RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/
     end
 end

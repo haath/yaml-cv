@@ -70,6 +70,8 @@ $ yaml-cv my_cv.yml --html my_cv.html
 $ yaml-cv my_cv.yml --pdf my_cv.pdf
 ```
 
+For PDF generation on Windows, [wkhtmltopdf.exe](https://wkhtmltopdf.org/downloads.html) needs to be in the PATH.
+
 The `--watch` option can also be used to watch the input file for changes and automatically regenerate the output.
 
 ```shell
