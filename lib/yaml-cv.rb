@@ -181,6 +181,8 @@ class CV < Mustache
             temp_file.flush
 
             system("wkhtmltopdf #{temp_file.path} #{file_path}")
+
+            temp_file.close
         end
       
     end
