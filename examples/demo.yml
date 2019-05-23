@@ -10,7 +10,7 @@ profile: |
   The document consist of details parsed from a user-friendly YAML file.
   This way skills, accomplishments and experienced can be detailed and kept tracked of
   in a version-controlled manner, without the syntactic challenging of formatting and 
-  styling the actual document.
+  styling the actual document
 
 contact:
 - text: johndoe@example.com
@@ -37,7 +37,7 @@ technical:
   - category: Languages
     items: C, C++, C#, HTML
   - category: Frameworks
-    items: Node.js, React.js, Bootstrap
+    items: Node.js, React.js, Bootstrap, Pixi.js
 
 sections:
 - name: Work Experience
@@ -85,4 +85,5 @@ sections:
     logo: img/bulb.png
     subtitle: Placeholder Engineering
     location: Cambridge, UK
-    description: Logos can also be used in combination with a title.
+    description: Logos can also be used in combination with a titles.
+  

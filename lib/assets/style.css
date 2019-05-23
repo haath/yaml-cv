@@ -2,6 +2,7 @@
 body {
     padding: 0px;
     background-color: rgb(218, 218, 218);
+    letter-spacing: 0.01em;
 }
 
 p, li {
@@ -56,10 +57,12 @@ p, li {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    height: 3.4em;
+    height: 3.6em;
 
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
     column-count: 2;
-    column-gap: .3em;
+    column-gap: 0em;
     column-fill: auto;
 }
 
@@ -83,10 +86,6 @@ p, li {
     margin-right: .6em;
 }
 
-.section .content-wrapper {
-    padding: 0 .5em .75em .5em;
-}
-
 .section .title-wrapper {
     width: 16%;
     vertical-align: top;
@@ -101,6 +100,10 @@ p, li {
     font-size: .8em;
 }
 
+p {
+    margin: 0 0 0 0;
+}
+
 .subsection {
     width: 100%;
 }
@@ -111,7 +114,7 @@ p, li {
 
 .subsection .title {
     color: #696969;
-    font-size: .9em;
+    font-size: 1em;
     text-transform: none;
 }
 
@@ -140,6 +143,7 @@ p, li {
     font-size: .86em;
     font-weight: 600;
     vertical-align: top;
+    text-align: right;
 }
 .skills-section {
     padding-bottom: .25em !important;
@@ -149,13 +153,23 @@ p, li {
     margin-bottom: .5em;
 }
 
-.technical-list td:not(:last-child) {
-    margin-bottom: .5em;
-}
-
 .title .logo {
     vertical-align: middle;
     height: 1.4em;
     top: -.2em;
     position: relative;
+}
+
+.technical-list .content {
+    width: 100%;
+    display: block;
+}
+
+.technical-list .content p {
+    width: 100%;
+    display: inline-block;
+}
+
+.section td.title-wrapper {
+    padding-bottom: .6em;
 }

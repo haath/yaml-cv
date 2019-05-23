@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -53,7 +54,7 @@ ____________ ___________ _____ _      _____
 \_|   \_| \_|\___/\_|    \___/\_____/\____/
 -->
             {{# has_profile}}
-            <tr class="section">
+            <tr class="section section-profile">
                 <td class="title-wrapper">
                     <p class="title cyan">Profile</p>
                 </td>
@@ -110,7 +111,7 @@ ____________ ___________ _____ _      _____
                         {{# technical}}
                             <tr>
                                 <td class="skill-title">{{ category }}:</td>
-                                <td class="content"><p>{{{ items }}}</p></td>
+                                <td width="100%" class="content"><p>{{{ items }}}</p></td>
                             </tr>
                         {{/ technical}}
                     </table>
@@ -138,7 +139,7 @@ ____________ ___________ _____ _      _____
                                 <td>
                                     <p class="title">
                                         {{# logo}}
-                                        <img class="logo" src="data:image/png;base64,{{ logo }}">
+                                        <img class="logo" src="data:image/png;base64,{{ logo_img }}">
                                         {{/ logo}}
                                         {{ title }}
                                     </p>
@@ -154,14 +155,18 @@ ____________ ___________ _____ _      _____
                                 </td>
                             </tr>
                             <tr>
+                                {{# subtitle}}
                                 <td>
                                     <p class="subtitle">
                                         {{ subtitle }}
                                     </p>
                                 </td>
+                                {{/ subtitle}}
+                                {{# location}}
                                 <td class="location-wrapper">
                                     <p class="cyan">{{ location }}</p>
                                 </td>
+                                {{/ location}}
                             </tr>
                             <tr>
                                 <td colspan="2">

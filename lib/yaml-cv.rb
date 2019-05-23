@@ -115,7 +115,7 @@ class CV < Mustache
         end
 
         columns = (contact.length / 3.0).ceil
-        padding = (2 - columns) * 3
+        padding = (1 - columns) * 3
 
         Array.new(padding) { |i| 0 }
     end
@@ -138,7 +138,7 @@ class CV < Mustache
             end
     
             if e["logo"]
-                e["logo"] = read_image e["logo"]
+                e["logo_img"] = read_image e["logo"]
             end
     
             e
