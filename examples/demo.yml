@@ -49,6 +49,7 @@ sections:
     from:
       month: 6
       year: 2018
+    to: Present
     description:
     - Subsections in experience and education can optionally have extended descriptions.
     - An empty "to" date defaults to "Present".
@@ -86,4 +87,7 @@ sections:
     subtitle: Placeholder Engineering
     location: Cambridge, UK
     description: Logos can also be used in combination with a titles.
+    from:
+      month: 9
+      year: 2014
   

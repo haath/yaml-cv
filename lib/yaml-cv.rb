@@ -27,8 +27,10 @@ def format_period(period)
         11 => "Nov",
         12 => "Dec"
     }
-    index = period["month"]
-    period["month"] = month_names[ index ]
+    if period["month"]
+        index = period["month"]
+        period["month_name"] = month_names[ index ]
+    end
     period
 end
 

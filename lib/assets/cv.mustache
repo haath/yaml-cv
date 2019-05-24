@@ -147,9 +147,16 @@ ____________ ___________ _____ _      _____
                                 <td class="period-wrapper">
                                     <p>
                                         {{# from}}
-                                            {{ from.month }} <b>{{ from.year }}</b> -
-                                            {{# to}}{{ to.month }} <b>{{ to.year }}</b>{{/ to}}
-                                            {{^ to}}Present{{/ to}}
+                                            {{ from.month_name }} <b>{{ from.year }}</b>
+                                            {{# to}}
+                                                -
+                                                {{# to.year}}
+                                                    {{ to.month_name }} <b>{{ to.year }}</b>
+                                                {{/ to.year}}
+                                                {{^ to.year}}
+                                                    {{ to }}
+                                                {{/ to.year}}
+                                            {{/ to}}
                                         {{/ from}}
                                     </p>
                                 </td>
