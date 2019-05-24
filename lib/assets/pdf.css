@@ -2,7 +2,10 @@
 body {
     padding: 0px;
     background-color: white;
-    letter-spacing: 0.09em;
+}
+
+p, li {
+    font-family: Calibri, arial, sans-serif;
 }
 
 .cv-wrapper {
