@@ -6,7 +6,7 @@ LABEL maintainer="gmantaos@gmail.com"
 ARG BUILD_TAG=v0.1.0
 ENV BUILD_TAG $BUILD_TAG
 
-COPY Gemfile Gemfile.lock yaml-cv.gemspec /src/
+COPY Gemfile yaml-cv.gemspec /src/
 
 RUN cd /src && \
     bundle install
