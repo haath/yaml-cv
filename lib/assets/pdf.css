@@ -2,9 +2,10 @@
 body {
     padding: 0px;
     background-color: white;
+    font-size: 20px;
 }
 
-p, li {
+p, li, td {
     font-family: Calibri, arial, sans-serif;
 }
 

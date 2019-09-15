@@ -4,9 +4,18 @@ body {
     background-color: rgb(218, 218, 218);
 }
 
-p, li {
+p, li, td {
     font-family: Century Gothic, arial, sans-serif;
     color: #989898;
+}
+
+tbody {
+    padding: 0;
+    margin: 0;
+}
+
+table {
+    padding: 0;
 }
 
 .cyan {
@@ -88,6 +97,10 @@ p, li {
 .section .title-wrapper {
     width: 16%;
     vertical-align: top;
+}
+
+.section-profile {
+    padding-bottom: 1em;
 }
 
 .section .title {
