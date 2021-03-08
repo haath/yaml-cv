@@ -12,3 +12,8 @@ p, li, td {
 .cv-wrapper {
     margin: 0;
 }
+
+.title .logo
+{
+    height: 1em !important;
+}
