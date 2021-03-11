@@ -65,7 +65,23 @@ class CV < Mustache
     end
 
     def skills
-        @cv["skills"]
+        # split into an n-column table
+        nskills = @cv["skills"]["fields"].length()
+        ncols = @cv["skills"]["columns"]
+        nrows = (nskills / ncols).ceil
+
+        skills_table = Array.new(nrows){Array.new(ncols)}
+
+        i = 0
+        while i < nskills
+
+            col = i % ncols
+            row = i / nrows
+            skills_table[row][col] = @cv["skills"]["fields"][i]
+
+            i = i + 1
+        end
+        skills_table
     end
 
     def has_skills

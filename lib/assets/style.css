@@ -16,6 +16,7 @@ tbody {
 
 table {
     padding: 0;
+    border-collapse: collapse;
 }
 
 .cyan {
@@ -141,47 +142,59 @@ p {
     font-weight: 600;
 }
 
-.fields-list {
-    column-fill: balance;
+.skill-wrapper {
+    vertical-align: top;
+    padding-top: 0;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    padding-left: 0;
 }
-.fields-list li {
-    break-inside: avoid-column;
-    display: inline-block;
-    page-break-inside: avoid;
-}
-
 .skill-title {
     color: #696969;
-    font-size: .86em;
+    font-size: 1em;
     font-weight: 600;
     vertical-align: top;
     text-align: left;
 }
-.skills-section {
-    padding-bottom: .25em !important;
-}
-
-.fields-list li {
-    margin-bottom: .5em;
-}
 
 .title .logo {
     vertical-align: middle;
-    height: 1.4em;
+    height: 1.15em;
     top: -.2em;
     position: relative;
 }
 
+.technical-list {
+    vertical-align: bottom;
+}
+.technical-list td {
+    padding: 0;
+}
 .technical-list .content {
     width: 100%;
+    height: 100%;
     display: block;
+    padding-top: .2em;
 }
-
 .technical-list .content p {
     width: 100%;
+    height: 100%;
     display: inline-block;
+}
+.technical-list .technical-title {
+    padding-right: 0.5em;
 }
 
 .section td.title-wrapper {
     padding-bottom: .6em;
+}
+
+.section > td {
+    padding: 0;
+}
+.content-wrapper {
+    padding: 0 0 1em 0;
+}
+.content-wrapper table {
+    margin: 0;
 }

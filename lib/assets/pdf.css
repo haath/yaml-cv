@@ -17,3 +17,7 @@ p, li, td {
 {
     height: 1em !important;
 }
+
+.section .title-wrapper {
+    width: 18%;
+}

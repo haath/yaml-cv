@@ -79,17 +79,19 @@ ____________ ___________ _____ _      _____
                     <p class="title cyan">Skills</p>
                 </td>
                 <td class="content-wrapper skills-section">
-                    <div class="fields-wrapper">
-                        <ul class="fields-list skill-list no-list" style="columns: {{ skills.columns }};">
-                            {{# skills.fields}}
-                                <li>
-                                    <span class="skill-title">{{{ name }}}</span>
-                                    <br>
-                                    <span class="content">{{{ description }}}</span>
-                                </li>
-                            {{/ skills.fields}}
-                        </ul>
-                    </div>
+                    <table class="skill-list">
+                        {{# skills}}
+                            <tr>
+                                {{# .}}
+                                    <td class="skill-wrapper">
+                                        <span class="skill-title">{{{ name }}}</span>
+                                        <br>
+                                        <span class="content">{{{ description }}}</span>
+                                    </td>
+                                {{/ .}}
+                            </tr>
+                        {{/ skills}}
+                    </table>
                 </td>
             </tr>
             {{/ has_skills}}
@@ -111,8 +113,8 @@ ____________ ___________ _____ _      _____
                     <table class="technical-list">
                         {{# technical}}
                             <tr>
-                                <td class="skill-title">{{ category }}</td>
-                                <td width="100%" class="content"><p>{{{ items }}}</p></td>
+                                <td class="skill-title technical-title">{{ category }}</td>
+                                <td class="content"><p>{{{ items }}}</p></td>
                             </tr>
                         {{/ technical}}
                     </table>
