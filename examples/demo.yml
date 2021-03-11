@@ -9,7 +9,7 @@ profile: |
   This modular generator is used to generate a CV or resume, in HTML or PDF format.
   The document consist of details parsed from a user-friendly YAML file.
   This way skills, accomplishments and experienced can be detailed and kept tracked of
-  in a version-controlled manner, without the syntactic challenging of formatting and 
+  in a version-controlled manner, without the syntactic challenging of formatting and
   styling the actual document
 
 contact:
@@ -90,4 +90,4 @@ sections:
     from:
       month: 9
       year: 2014
-  
+

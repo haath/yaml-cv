@@ -37,7 +37,7 @@ end
 class CV < Mustache
 
     self.template_file = File.join(File.dirname(__FILE__), "assets/cv.mustache")
-    
+
     attr_accessor :is_pdf
 
 	def initialize(file_path)
@@ -46,12 +46,12 @@ class CV < Mustache
 
         if  @cv["contact"]
             @cv["contact"] = @cv["contact"].map { |c|
-                c["icon"] = icon(c["icon"])
+                c["icon_svg"] = icon(c["icon"])
                 c
             }
         end
     end
-    
+
     def details
         @cv["details"]
     end
@@ -90,15 +90,15 @@ class CV < Mustache
             s
         }
     end
-	
+
 	def full_name
 		details["last_name"] + " " + details["first_name"]
     end
-    
+
     def css
         load_asset("style.css")
     end
-    
+
     def pdf_css
         load_asset("pdf.css")
     end
@@ -108,18 +108,19 @@ class CV < Mustache
     end
 
     def contact
-        @cv["contact"]
-    end
+        # split into a 2-column table
+        contact_table = Array.new(3){Array.new(2)}
 
-    def contact_padding
-        if !contact
-            return 0
+        i = 0
+        while i < @cv["contact"].length()
+
+            row = i % 3
+            col = 1 - (i / 3)
+            contact_table[row][col] = @cv["contact"][i]
+
+            i = i + 1
         end
-
-        columns = (contact.length / 3.0).ceil
-        padding = (1 - columns) * 3
-
-        Array.new(padding) { |i| 0 }
+        contact_table
     end
 
     def icon(name)
@@ -130,7 +131,7 @@ class CV < Mustache
         if !subsections
             return
         end
-    
+
         subsections.map { |e|
             if e["from"]
                 e["from"] = format_period e["from"]
@@ -138,11 +139,11 @@ class CV < Mustache
             if e["to"]
                 e["to"] = format_period e["to"]
             end
-    
+
             if e["logo"]
                 e["logo_img"] = read_image e["logo"]
             end
-    
+
             e
         }
     end
@@ -186,7 +187,7 @@ class CV < Mustache
 
             temp_file.close
         end
-      
+
     end
 
     def is_windows
