@@ -68,7 +68,7 @@ class CV < Mustache
         # split into an n-column table
         nskills = @cv["skills"]["fields"].length()
         ncols = @cv["skills"]["columns"]
-        nrows = (nskills / ncols).ceil
+        nrows = (nskills.to_f / ncols).ceil
 
         skills_table = Array.new(nrows){Array.new(ncols)}
 
@@ -76,7 +76,8 @@ class CV < Mustache
         while i < nskills
 
             col = i % ncols
-            row = i / nrows
+            row = i / ncols
+
             skills_table[row][col] = @cv["skills"]["fields"][i]
 
             i = i + 1

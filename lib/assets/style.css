@@ -2,6 +2,7 @@
 body {
     padding: 0px;
     background-color: rgb(218, 218, 218);
+    font-size: 14px;
 }
 
 p, li, td {
@@ -41,6 +42,7 @@ table {
 
 .header {
     margin-bottom: 1em;
+    font-size: 1.2em;
 }
 
 .header table {
@@ -58,7 +60,7 @@ table {
 }
 
 .header .name {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 800;
 }
 
@@ -110,7 +112,6 @@ table {
 }
 
 .section .content {
-    font-size: .8em;
 }
 
 p {
@@ -127,7 +128,6 @@ p {
 
 .subsection .title {
     color: #696969;
-    font-size: 1em;
     text-transform: none;
 }
 
@@ -138,7 +138,6 @@ p {
 }
 
 .subsection .subtitle {
-    font-size: .86em;
     font-weight: 600;
 }
 
@@ -151,7 +150,6 @@ p {
 }
 .skill-title {
     color: #696969;
-    font-size: 1em;
     font-weight: 600;
     vertical-align: top;
     text-align: left;
